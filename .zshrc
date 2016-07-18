@@ -2,7 +2,9 @@
   export EDITOR=vim
 # Path to your oh-my-zsh installation.
   export ZSH=/home/lesspion/.oh-my-zsh
-
+# XDG CONFIG
+  export XDG_SESSION_HOME=/home/lesspion/.config
+  export MONITOR="LVDS1"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -91,10 +93,11 @@ alias spotinext="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /
 alias spotiprev="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 alias spotistop="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 # tools :
-alias keycode="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"
+alias keycode="xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf \"%-3s %s\n\", $5, $8 }'"
 
 alias open_doc="docker run -v /home/lesspion/Doc:/usr/src/app/source/_posts -p 8000:4000 doc & firefox localhost:8000"
 
 # docker aliases :
-alias docker-stop="docker stop $(docker ps -a -q)"
-alias docker-rm="docker rm $(docker ps -a -q)"
+# alias docker-stop="docker stop $(docker ps -a -q)"
+# alias docker-rm="docker rm $(docker ps -a -q)"
+alias dock="lua ~/lua/docker-manager/dock"
