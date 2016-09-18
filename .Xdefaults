@@ -1,0 +1,86 @@
+Xcursor.theme: DMZ-White
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgba
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.autohint: true
+
+!urxvt*perl-ext: default,tabbedex,matcher,kuake,clipboard
+!urxvt*perl-ext: default,tabbedex,clipboard,kuake
+!urxvt*perl-ext: default,clipboard,remote-clipboard
+URxvt.perl-ext-common: default,matcher,clipboard,resize-font,matcher
+
+!URxvt.keysym.M-c:   perl:clipboard:copy
+!URxvt.keysym.M-v:   perl:clipboard:paste
+
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-plus
+
+urxvt*scrollBar: false
+urxvt*saveLines: 1000
+!URxvt*font:xft:Monaco:pixelsize=11
+URxvt*font:     xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=16:size=16:antialias=true
+!urxvt*font:xft:terminus:size=12:antialias=true
+!urxvt.font: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-2
+!urxvt.font: -urw-gothic-l-r-*-9-*-*-*-*-*-*-*
+!URxvt*geometry: 78x22
+URxvt*loginShell: true
+
+!urxvt*background: Black
+urxvt.underlineColor: yellow
+!urxvt*foreground: #BBBBBB
+urxvt.cursorBlink: true
+urxvt.cursorColor: #BBBBBB
+!urxvt.tabbed.tabbar-fg: 8
+!urxvt.tabbed.tabbar-bg: 0
+!urxvt.tabbed.tab-fg: 10
+!urxvt.tabbed.tab-bg: 0
+urxvt.urlLauncher: /usr/bin/google-chrome-stable
+URxvt.url-launcher: /usr/bin/google-chrome-stable
+urxvt.matcher.button: 1
+urxvt.transparent: true
+urxvt.shading: 10
+urxvt.fading: 25
+
+:urxvt*internalBorder: 4
+urxvt*keysym.0xFF50: \033[1~
+urxvt*keysym.0xFF57: \033[4~
+urxvt*borderLess: false
+URxvt.depth:32
+URxvt.background:rgba:0000/0000/0000/efff
+URxvt.letterSpace: -2
+
+!
+urxvt*foreground: #BBBBBB
+!urxvt*background: #121212
+!! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #6F99B4
+*color12: #7C96B0
+! DarkMagenta + Magenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff
