@@ -5,12 +5,13 @@
 # XDG CONFIG
   export XDG_SESSION_HOME=/home/lesspion/.config
   export MONITOR="LVDS1"
+  export GOPATH=$HOME/go/github
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="xiong-chiamiov-plus"
-
+# ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="norm"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -57,7 +58,8 @@ plugins=(git)
 
 # User configuration
 
-# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/home/lesspion/.gem/ruby/2.3.0/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -77,7 +79,9 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+function docServer {
+    docker run -v /home/lesspion/Doc:/usr/src/app/source/_posts -p 8000:4000 doc
+}
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -101,3 +105,15 @@ alias open_doc="docker run -v /home/lesspion/Doc:/usr/src/app/source/_posts -p 8
 # alias docker-stop="docker stop $(docker ps -a -q)"
 # alias docker-rm="docker rm $(docker ps -a -q)"
 alias dock="lua ~/lua/docker-manager/dock"
+alias image="sxiv"
+
+function lsd {
+    cd $1
+    ls
+}
+
+function showmem() {
+    ps -eo size,pid,user,command --sort -size | awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' | grep -v grep | grep $1
+}
+
+alias maryse="notify-send -i ~/Images/maryse.jpg ' '"
